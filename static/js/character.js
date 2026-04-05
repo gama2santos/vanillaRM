@@ -6,6 +6,7 @@ export default class Character {
     this.species = species
     this.status = status
     this.$characterImageContainer = document.querySelector('#character-image-container')
+    this.$characterImageWrapper = document.querySelector('.character-image-wrapper')
     this.$characterNameContainer = document.querySelector('#character-name-container')
     this.$characterDescriptionContainer = document.querySelector('#character-description-container')
     this.$characterNamePlaceHolderContainer = document.querySelector('#character-name-placeholder')
@@ -33,9 +34,31 @@ export default class Character {
     `
   }
   render() {
-    this.$characterImageContainer.innerHTML = this.buildImage()
-    this.$characterNameContainer.innerHTML = this.buildName()
-    this.$characterDescriptionContainer.innerHTML = this.buildDescription()
-    this.$characterNamePlaceHolderContainer.innerHTML = this.name
+    // Crear efecto portal antes de cambiar
+    const portal = document.createElement("div")
+    portal.classList.add("portal")
+    this.$characterImageWrapper.appendChild(portal)
+
+    // Delay pequeño para que se vea el efecto
+    setTimeout(() => {
+      this.$characterImageWrapper.innerHTML = this.buildImage()
+      this.$characterNameContainer.innerHTML = this.buildName()
+      this.$characterDescriptionContainer.innerHTML = this.buildDescription()
+      this.$characterNamePlaceHolderContainer.innerHTML = this.name
+
+      // Animación fade al nuevo personaje
+      const img = this.$characterImageWrapper.querySelector("img")
+      img.classList.add("fade-enter")
+
+      setTimeout(() => {
+        img.classList.remove("fade-enter")
+      }, 400)
+
+    }, 200)
+
+    // Limpiar portal después
+    setTimeout(() => {
+      portal.remove()
+    }, 600)
   }
 }

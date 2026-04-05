@@ -21,16 +21,8 @@
       <span class="line"></span>
     </span>
     <img class="logo" src="./static/images/logo@2x.png" width="580" alt="">
-    <div class="social">
-      <a href="https://www.instagram.com/gama2santos/" target="_blank">
-        <img src="./static/images/instagram.svg" alt="">
-      </a>
-      <a href="https://facebook.com/Gama2santos" target="_blank">
-        <img src="./static/images/facebook.svg" alt="">
-      </a>
-      <a href="https://twitter.com/Gama2santos" target="_blank">
-        <img src="./static/images/twitter.svg" alt="">
-      </a>
+    <div class="jupiten-container">
+      <img src="./static/images/jupiter.svg" alt="Jupiten" class="jupiten-image" />
     </div>
     <div class="navigation name">
       <a href="#">Name</a>
@@ -40,7 +32,24 @@
     </div>
 
     <div id="character-image-container" class="character-image-container">
+        <!-- Canvas para partículas -->
+      <canvas id="particle-canvas"></canvas>
+
+      <div class="character-image-wrapper"></div>
+
+      <div class="arrow previous" id="load-previous">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </div>
+
+      <div class="arrow next" id="load-next">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </div>
     </div>
+
     <div class="navigation about">
       <a href="#">About</a>
     </div>
@@ -61,11 +70,27 @@
       <span>More Characters</span>
     </div>
 
-    <div class="arrow" id="load-next"></div>
-
   </div>
 
+  <footer class="footer">
+  <div class="footer-content">
+    <p>© 2026 Rick & Morty Fan Page. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/gama2santos/" target="_blank" aria-label="Instagram">
+        <img src="./static/images/instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://facebook.com/Gama2santos" target="_blank" aria-label="Facebook">
+        <img src="./static/images/facebook.svg" alt="Facebook">
+      </a>
+      <a href="https://twitter.com/Gama2santos" target="_blank" aria-label="Twitter">
+        <img src="./static/images/twitter.svg" alt="Twitter">
+      </a>
+    </div>
+  </div>
+</footer>
+
   <script type="module" src="./static/js/app.js"></script>
+  <script type="module" src="./static/js/canvas.js"></script>
 </body>
 
 </html>
